@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<header>
+    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
+</header>
+<body>
+<nav class="main-nav">
+    <ul>
+        <li class="logout"><a href="/login" class="logout"> Logout </a>
+        </li><li>
+            <a href="/about/{{username}}/{{key}}">about</a>
+        </li><li class="urgent">
+            <a href="/urgent_list/{{username}}/{{key}}">
+                <p>Urgent</p><img src="{{url_for('static', filename='images/late.jpg')}}" alt="late">
+            </a>
+        </li><li class="daily">
+            <a href="/daily_list/{{username}}/{{key}}">
+                <p>Daily list</p>
+                <img src="{{url_for('static', filename='images/daily.jpg')}}" alt="daily">
+            </a>
+        </li><li class="lazy">
+            <a href="/lazy_list/{{username}}/{{key}}">
+                <p>Lazy list</p>
+                <img src="{{url_for('static', filename='images/lazy.jpg')}}" alt="lazy">
+            </a>
+        </li><li li class="shopping">
+            <a href="/shopping_list/{{username}}/{{key}}">
+                <p>Shopping list</p>
+                <img src="{{url_for('static', filename='images/shopping.jpg')}}" alt="shopping">
+            </a>
+        </li><li class="shopping">
+            <a href="/donate">
+                <p>Donate us!</p>
+                <img src="{{url_for('static', filename='images/paypal.jpg')}}" alt="donate">
+            </a>
+        </li><li>
+                <a href="/importance/{{username}}/{{key}}"> Importance </a></li>
+    </ul>
+</nav>
+<div class="contentabout">
+    <div class="about">
+        <h1>~About~</h1>
+        <article>so, it's about this amazing thing we call a "Todo-list" which is something we most need in our daily life.
+            <br>
+            i will be trying to speak about the lists and about how important they are for our daily life.
+            <br>
+            basically, since the existance of common folks as myself and for their need of a "Todo-list" to remember "what?", "why?" and of course "when?" i made a web app.
+            <br>
+            it's a great use for people like me who love doing nothing so we'll start to actually be doing somthing with our miserable lives.
+            <br>
+            i have so much more to say but unfortunately there is no time, you see, since i started using my amazing "Todo-list" i'm always busy, actually, you should try it yourself instead of reading this nonesense.
+            <br>
+        </article>
+    </div>
+</div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script src="/static/js/paypal.js"></script>
+</body>
+</html>

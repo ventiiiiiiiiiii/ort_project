@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>users_list</title>
+<!-- {% for blahs in blah %}
+<script>
+alert({{blahs}});
+</script>
+{% endfor %} -->
+<header>
+    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
+</header>
+{% endblock %}
+
+{% block body %}
+<nav class="main-nav">
+    <ul>
+        <li class="logout"><a href="/login" class="logout"> Logout </a>
+    </ul>
+</nav>
+{% for user in users_list %}
+<table>
+    <th>Id</th>
+    <br>
+    <th>Name</th>
+    <th>Date created</th>
+    <th>Admin</th>
+    <th>Delete</th>
+    <tr>
+        <td>{{ user.id }}</td>
+        <br>
+        <td>{{ user.name}}</td>
+        <td>{{ user.date_created.date() }}</td>
+        <td>{{ user.isadmin }}</td>
+        <td>
+            <a href="/deleteuser/{{username}}/{{key}}/{{user.id}}">Delete</a>
+            <br>
+        </td>
+    </tr>
+</table>
+{% endfor %}
+{% endblock %}

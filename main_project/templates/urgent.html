@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+
+<header>
+    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
+</header>
+{% endblock %}
+
+{% block body %}
+<nav class="main-nav">
+    <ul>
+        <li class="logout"><a href="/login" class="logout"> Logout </a>
+        </li><li>
+            <a href="/about/{{username}}/{{key}}">about</a>
+        </li><li class="urgent">
+            <a href="/urgent_list/{{username}}/{{key}}">
+                <p>Urgent</p><img src="{{url_for('static', filename='images/late.jpg')}}" alt="late">
+            </a>
+        </li><li class="daily">
+            <a href="/daily_list/{{username}}/{{key}}">
+                <p>Daily list</p>
+                <img src="{{url_for('static', filename='images/daily.jpg')}}" alt="daily">
+            </a>
+        </li><li class="lazy">
+            <a href="/lazy_list/{{username}}/{{key}}">
+                <p>Lazy list</p>
+                <img src="{{url_for('static', filename='images/lazy.jpg')}}" alt="lazy">
+            </a>
+        </li><li class="shopping">
+            <a href="/shopping_list/{{username}}/{{key}}">
+                <p>Shopping list</p>
+                <img src="{{url_for('static', filename='images/shopping.jpg')}}" alt="shopping">
+            </a>
+        </li><li class="shopping">
+            <a href="/donate">
+                <p>Donate us!</p>
+                <img src="{{url_for('static', filename='images/paypal.jpg')}}" alt="donate">
+            </a>
+        </li><li>
+                <a href="/importance/{{username}}/{{key}}"> Importance </a>
+        </li>
+    </ul>
+</nav>
+<div class="contenturgent">
+    <div class="main-contenturgent">
+        <h1>Task Master</h1>
+        {% if tasks|length < 1 %} 
+        <h4 style="text-align:center;">kid, add a task</h4>
+            {% endif %}
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Notes</th>
+                    <th>Date added</th>
+                    <th>Deadline</th>
+                    <th>Progress</th>
+                    <th>Actions</th>
+                </tr>
+                {% for task in tasks %}
+                {% if task.userid == key %}
+                <tr>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.notes }}</td>
+                    <td>{{ task.date_created.date() }}</td>
+                    <td>
+                    {% if task.deadline.date()|string == '9999-09-09' %}
+                        {{" no preasureee"}}
+                    {% else %}
+                        {{ task.deadline.date() }}
+                        {% endif %}
+                    </td>
+                    <td>{{ task.progress}}</td>
+                    <td>
+                        <a href="/delete/{{username}}/{{key}}/{{task.id}}">Delete</a>
+                        <br>
+                        <a href="/update/{{username}}/{{key}}/{{task.id}}">Update</a>
+                        <br>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+        </table>
+            <div class="form">
+                <form action="/urgent_list/{{username}}/{{key}}" method="POST">
+                    <label for="text">text: </label>
+                    <input type="text" name="urgent_content" id="urgent_content" required>
+                    <label for="notes">notes: </label>
+                    <input type="text" name="notes" id="notes">
+                    <label for="deadline">deadline: </label>
+                    <input type="date" name="deadline" id="deadline">
+                    <label for="progress">progress: </label>
+                    <select name="progress" id='progress'>
+                        <option value="Not started">Not started</option>
+                        <option value="Started">Started</option>
+                        <option value="Middle">Middle</option>
+                        <option value="Almost done">Almost done</option>
+                        <option value="Done">Done</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="submit" value="Add Task">
+                </form>
+            </div>
+        </div>
+        <div class="cute_images">
+            <li><img src="" id="memes"/></li>
+            <li><img src="" id="img"/></li>
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+{% endblock %}
