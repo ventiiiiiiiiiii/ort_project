@@ -1,20 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
-
-<header>
-    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
-</header>
+<title>Todo-list</title>
 {% endblock %}
 
 {% block body %}
+<body style="background-color: blueviolet; height: 100%;">
 <div class="contentabout">
     <div class="about">
-        <h1>~hello good sir, please login~</h1>
-
-        
-
         <form action="/register" method="POST">
             <label for="text"">username: </label>
             <input type="text" name="username" id="username" required>
@@ -33,4 +26,5 @@
 
     </div>
 </div>
+</body>
 {% endblock %}

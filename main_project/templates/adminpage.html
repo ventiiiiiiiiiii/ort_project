@@ -2,17 +2,10 @@
 
 {% block head %}
 <title>users_list</title>
-<!-- {% for blahs in blah %}
-<script>
-alert({{blahs}});
-</script>
-{% endfor %} -->
-<header>
-    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
-</header>
 {% endblock %}
 
 {% block body %}
+<body style="background-color: blueviolet; height: 100%;">
 <nav class="main-nav">
     <ul>
         <li class="logout"><a href="/login" class="logout"> Logout </a>
@@ -33,7 +26,7 @@ alert({{blahs}});
         <td>{{ user.date_created.date() }}</td>
         <td>{{ user.isadmin }}</td>
         <td>
-            <a href="/deleteuser/{{username}}/{{key}}/{{user.id}}">Delete</a>
+            <a href="/deleteuser/{{username}}/{{key}}/{{user.id}}" style="color: rgb(47, 0, 83)">Delete</a>
             <br>
         </td>
     </tr>

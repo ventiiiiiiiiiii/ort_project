@@ -31,9 +31,9 @@ header img {
 }
 
 nav {
-    background-color: #38a3d8;
+    background-color:  rgb(47, 0, 83);
     top: 150px;
-    color: purple;
+    color: blueviolet;
 }
 
 nav ul {
@@ -42,7 +42,7 @@ nav ul {
     max-width: 100%;
     margin: 0 auto;
     padding-left: 0%;
-    color: purple;
+    color: blueviolet;
 }
 
 nav li {
@@ -68,7 +68,7 @@ nav a{
 li p{
     position: absolute;
     width: 100%;
-    background-color: rgb(165, 0, 130, 0.8);
+    background-color: blueviolet;
     border-radius: 50px;
 }
 
@@ -82,7 +82,7 @@ li.urgent{
 
 li.urgent a{
     position: relative;
-    color: #8a2900;
+    color: rgb(0, 0, 0);
 }
 
 li.urgent img{
@@ -104,6 +104,7 @@ li.daily{
 
 li.daily a{
     position: relative;
+    color: rgb(0, 0, 0)
 }
 
 li.daily img{
@@ -122,7 +123,7 @@ li.lazy{
 
 li.lazy a{
     position: relative;
-    color: rgb(0, 103, 162);
+    color: rgb(0, 0, 0);
 }
 
 li.lazy img{
@@ -140,10 +141,28 @@ li.shopping{
 
 li.shopping a{
     position: relative;
-    color: rgb(239, 191, 88);
+    color: rgb(0, 0, 0);
 }
 
 li.shopping img{
+    width: 100%;
+    height: 66px;
+    margin-bottom: -26px;
+}
+
+li.about{
+    position: relative;
+    height: 100%;
+    margin-bottom: -26px;
+    padding-top: 0px;
+}
+
+li.about a{
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+
+li.about img{
     width: 100%;
     height: 66px;
     margin-bottom: -26px;
@@ -226,6 +245,7 @@ div.donate{
     padding-top: 33px;
     padding-bottom: 33px;
     min-height: 79.8vh;
+    height: 100vh;
 }
 
 div.contenturgent{
@@ -302,28 +322,28 @@ body #memes{
 }
 
 .main-content{
-    background-color: rgba(205, 131, 21, 0.9);
+    background-color: blueviolet;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 33px;
     border-radius:99px;
 }
 .main-contentlazy{
-    background-color: rgba(173, 0, 107, 0.9);
+    background-color:  blueviolet;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 33px;
     border-radius:99px;
 }
 .main-contentshopping{
-    background-color: rgba(181, 246, 41, 0.9);
+    background-color: blueviolet;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 33px;
     border-radius:99px;
 }
 .main-contenturgent{
-    background-color: rgba(185, 52, 79, 0.9);
+    background-color: blueviolet;
     border-radius:99px;
     width: 60%;
     margin: 0 auto;
@@ -332,14 +352,14 @@ body #memes{
 
 .main-donate{
     padding-top: 1.3%;
-    background-color: rgba(205, 131, 21, 0.9);
+    background-color: blueviolet;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 33px;
     border-radius:99px;
 }
 .main-contentupdate{
-    background-color: rgba(72, 11, 102, 0.9);
+    background-color: blueviolet;
     border-radius:99px;
     width: 60%;
     margin: 0 auto;
@@ -385,8 +405,7 @@ body #memes{
     font-family: monospace;
     font-style: italic;
     font-size: 55px;
-    color: #9d0404;
-    background-color: rgb(86, 0, 74);
+    color: #400761;
     border-radius: 36px;
 }
 

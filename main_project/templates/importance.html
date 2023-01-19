@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>Todo-list</title>
 </head>
-<header>
-    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
-</header>
 <body>
 <div style="background-color: blueviolet;">
 <nav class="main-nav">
     <ul>
         <li class="logout"><a href="/login" class="logout"> Logout </a>
-        </li><li>
-            <a href="/about/{{username}}/{{key}}">about</a>
+        </li><li class="daily">
+            <a href="/about/{{username}}/{{key}}">
+                <p>about</p>
+                <img src="{{url_for('static', filename='images/about.jpg')}}" alt="about">
+            </a>
         </li><li class="urgent">
             <a href="/urgent_list/{{username}}/{{key}}">
                 <p>Urgent</p><img src="{{url_for('static', filename='images/late.jpg')}}" alt="late">
@@ -41,7 +42,8 @@
                 <img src="{{url_for('static', filename='images/paypal.jpg')}}" alt="donate">
             </a>
         </li><li>
-                <a href="/importance/{{username}}/{{key}}"> Importance </a></li>
+                <a href="/importance/{{username}}/{{key}}" style="color: rgb(0, 0, 0)"> Importance </a>
+            </li>
     </ul>
 </nav>
     <div class="contentimportance">

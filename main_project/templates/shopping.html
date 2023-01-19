@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>Todo-list</title>
 
-<header>
-    <img src="{{url_for('static', filename='images/blah.jpg')}}" alt="Spongyclub welcome banner">
-</header>
 {% endblock %}
 
 {% block body %}
 <nav class="main-nav">
     <ul>
         <li class="logout"><a href="/login" class="logout"> Logout </a>
-        </li><li>
-            <a href="/about/{{username}}/{{key}}">about</a>
+        </li><li class="daily">
+            <a href="/about/{{username}}/{{key}}">
+                <p>about</p>
+                <img src="{{url_for('static', filename='images/about.jpg')}}" alt="about">
+            </a>
         </li><li class="urgent">
             <a href="/urgent_list/{{username}}/{{key}}">
                 <p>Urgent</p><img src="{{url_for('static', filename='images/late.jpg')}}" alt="late">
@@ -39,7 +39,8 @@
                 <img src="{{url_for('static', filename='images/paypal.jpg')}}" alt="donate">
             </a>
         </li><li>
-                <a href="/importance/{{username}}/{{key}}"> Importance </a></li>
+            <a href="/importance/{{username}}/{{key}}" style="color: rgb(0, 0, 0)"> Importance </a>
+        </li>
     </ul>
 </nav>
 <div class="contentshopping">
@@ -72,9 +73,9 @@
                     </td>
                     <td>{{ task.progress}}</td>
                     <td>
-                        <a href="/delete/{{username}}/{{key}}/{{task.id}}">Delete</a>
+                        <a href="/delete/{{username}}/{{key}}/{{task.id}}" style="color: rgb(47, 0, 83);">Delete</a>
                         <br>
-                        <a href="/update/{{username}}/{{key}}/{{task.id}}">Update</a>
+                        <a href="/update/{{username}}/{{key}}/{{task.id}}" style="color: rgb(47, 0, 83)">Update</a>
                         <br>
                     </td>
                 </tr>
